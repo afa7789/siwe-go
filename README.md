@@ -62,15 +62,15 @@ _siwe-js/test/verification_positive.json_
 
 ```bash
 	pushd siwe-js
-	yarn install
-	yarn install --dev # not sure if needed.
+	npm install
+	npm install --dev # not sure if needed.
 	pushd packages/siwe
-	yarn install
-	yarn install --dev # not sure if needed.
+	npm install
+	npm install --dev # not sure if needed.
 	popd
 	pushd packages/siwe-parser
-	yarn install
-	yarn install --dev # not sure if needed.
+	npm install
+	npm install --dev # not sure if needed.
 	popd
 	popd
 ```
@@ -83,6 +83,40 @@ _siwe-js/test/verification_positive.json_
 	popd
 ```
 
+Run then more separated to see the tally example being printed as ok.
+
+```bash
+	pushd siwe-js/packages/siwe-parser
+	npx jest
+	popd
+```
+
+```bash
+	pushd siwe-js/packages/siwe
+	npx jest
+	popd
+```
+
+Results:
+
+```bash
+Round Trip
+	✓ Generates a Successfully Verifying message: tally_example (367 ms)
+###
+Message Generation
+    ✓ Generates message successfully: tally_example (20 ms)
+###
+Message verification
+	✓ Verificates message successfully: tally_example (288 ms)
+###
+Successfully parses with RegExp Client
+    ✓ Parses message successfully: tally_example (8 ms)
+###
+Successfully parses with ABNF Client
+    ✓ Parses message successfully: tally_example (216 ms)
+```
+
+
 6. Run the tests in siwe_go and see that it fails.
 
 ```bash
@@ -92,6 +126,20 @@ _siwe-js/test/verification_positive.json_
 
 ```
 
-## error output
+Error output:
 
 The error we are getting is `Invalid signature recovery byte`
+
+```bash
+=== RUN   TestGlobalTestVector
+    siwe_test.go:378: 
+                Error Trace:    siwe_test.go:378
+                                                        siwe_test.go:411
+                Error:          Expected nil, but got: &siwe.InvalidSignature{string:"Invalid signature recovery byte"}
+                Test:           TestGlobalTestVector
+                Messages:       tally_example
+--- FAIL: TestGlobalTestVector (0.00s)
+FAIL
+exit status 1
+FAIL    github.com/spruceid/siwe-go     0.020s
+```
