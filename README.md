@@ -1,7 +1,23 @@
 # SIWE_GO: Edge cases failing
 
-Ok so at [Tally](https://tally.xyz) we use Golang in the backend to do some tasks. And part of the signin is handled by it.
-But the code of the library : [siwe_go](github.com/spruceid/siwe_go)
+Ok so at [Tally](https://tally.xyz) we use Golang in the backend to do some tasks.
+And part of the signin is handled by it.
+But the code of the library : [siwe_go](github.com/spruceid/siwe_go) is not working as intended but js counterpart is, bellow I'm adding tests cases to showcase it.
+
+## Story
+ 
+ Hi,
+ 
+ Arthur from [Tally](https://tally.xyz) here. 
+ And we are using 'siwe-go' in the backend to authenticate SIWE requests.
+ We noticed that it did not seem to work for users signing with Ledger+Metamask.
+ I've put together some unit tests that duplicate the error. 
+ 
+ You'll see that the javascript tests validate the signature, but the go tests for the same signature do not. 
+ We're not super familiar with how the cryptography works here.
+ Do you know what the problem might be? We're looking for some help to fix the issue. 
+ 
+ Happy to provide more context if that's helpful!
 
 ## Replicate the issue.
 
