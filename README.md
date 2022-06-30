@@ -91,3 +91,7 @@ _siwe-js/test/verification_positive.json_
 	go test -v -timeout 30s -run ^TestGlobalTestVector$
 
 ```
+
+## error output
+
+The error we are getting is `Invalid signature recovery byte`
