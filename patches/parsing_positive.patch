@@ -1,0 +1,20 @@
+--- parsing_positive.json	2022-06-30 19:06:51.373898138 -0300
++++ parsing_positive2.json	2022-06-30 18:59:46.217379341 -0300
+@@ -1,4 +1,17 @@
+ {
++    "tally_example": {
++        "message": "www.tally.xyz wants you to sign in with your Ethereum account:\n0xc95EB884FE852e241D409234bfC7045CB9E31BD7\n\nSign in with Ethereum to Tally\n\nURI: https://tally.xyz\nVersion: 1\nChain ID: 1\nNonce: 15050747\nIssued At: 2022-06-30T14:08:51.382Z",
++        "fields": {
++            "domain": "www.tally.xyz",
++            "address": "0xc95EB884FE852e241D409234bfC7045CB9E31BD7",
++            "statement": "Sign in with Ethereum to Tally",
++            "uri": "https://tally.xyz",
++            "version": "1",
++            "chainId": 1,
++            "nonce": "15050747",
++            "issuedAt": "2022-06-30T14:08:51.382Z"
++        }
++    },
+     "couple of optional fields": {
+         "message": "service.org wants you to sign in with your Ethereum account:\n0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2\n\nI accept the ServiceOrg Terms of Service: https://service.org/tos\n\nURI: https://service.org/login\nVersion: 1\nChain ID: 1\nNonce: 32891757\nIssued At: 2021-09-30T16:25:24.000Z\nResources:\n- ipfs://Qme7ss3ARVgxv6rXqVPiikMJ8u2NLgmgszg13pYrDKEoiu\n- https://example.com/my-web2-claim.json",
+         "fields": {
