@@ -143,3 +143,5 @@ FAIL
 exit status 1
 FAIL    github.com/spruceid/siwe-go     0.020s
 ```
+
+![Theme meme](resources/meme.png)
